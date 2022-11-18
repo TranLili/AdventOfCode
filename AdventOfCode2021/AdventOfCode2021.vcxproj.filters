@@ -16,10 +16,16 @@
     <Filter Include="Inputs">
       <UniqueIdentifier>{c472d516-9358-4287-9601-fc2239f3ef1e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="SolutionsForTheDay">
+      <UniqueIdentifier>{2153851a-53a0-4fdb-8bca-e038ad201328}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AdventOfCode2021.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SolutionDay1.cpp">
+      <Filter>SolutionsForTheDay</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

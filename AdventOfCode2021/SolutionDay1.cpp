@@ -10,7 +10,7 @@ using namespace std;
 
 int main()
 {
-    ifstream inputFile ("InputDay01.txt");
+    ifstream inputFile("InputDay01.txt");
 
     if (inputFile.is_open()) {
         string fileString;
@@ -39,7 +39,7 @@ int main()
                         cout << "sum2:" << sum2 << endl;
 
                         //couts sums and counter
-                         cout <<"j:" << j << endl;
+                        cout << "j:" << j << endl;
                     }
 
         }
