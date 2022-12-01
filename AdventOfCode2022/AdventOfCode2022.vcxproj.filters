@@ -14,22 +14,16 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="Inputs">
-      <UniqueIdentifier>{c472d516-9358-4287-9601-fc2239f3ef1e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="SolutionsForTheDay">
-      <UniqueIdentifier>{2153851a-53a0-4fdb-8bca-e038ad201328}</UniqueIdentifier>
+      <UniqueIdentifier>{8c787f93-e828-4aa0-b7e8-cbd1d6437fe7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AdventOfCode2021.cpp">
+    <ClCompile Include="AdventOfCode2022.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SolutionDay1.cpp">
-      <Filter>SolutionsForTheDay</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="2021Day1.txt">
+    <Text Include="2022Day1.txt">
       <Filter>Inputs</Filter>
     </Text>
   </ItemGroup>

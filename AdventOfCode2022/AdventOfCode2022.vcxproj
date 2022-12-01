@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{5f22cfa4-b4f4-4382-93b8-e276a778ed62}</ProjectGuid>
-    <RootNamespace>AdventOfCode2021</RootNamespace>
+    <ProjectGuid>{864bbab0-61a6-4000-af62-43077191670a}</ProjectGuid>
+    <RootNamespace>AdventOfCode2022</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,11 +127,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AdventOfCode2021.cpp" />
-    <ClCompile Include="SolutionDay1.cpp" />
+    <ClCompile Include="AdventOfCode2022.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="2021Day1.txt" />
+    <Text Include="2022Day1.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

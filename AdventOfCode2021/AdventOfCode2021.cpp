@@ -10,7 +10,7 @@ using namespace std;
 
 int main()
 {
-    ifstream inputFile ("InputDay01.txt");
+    ifstream inputFile ("2021Day1.txt");
 
     if (inputFile.is_open()) {
         string fileString;
