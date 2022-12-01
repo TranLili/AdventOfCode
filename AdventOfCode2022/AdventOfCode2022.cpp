@@ -1,6 +1,3 @@
-// AdventOfCode2022.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -14,12 +11,12 @@ int main()
 
     if (inputFile.is_open()) {
         string fileString;
-        vector<int> inputs;
-        int j = 0;
 
         while (inputFile) {
             getline(inputFile, fileString);
+            vector<int> inputsList;
             
+            cout << fileString << endl;
         }
     }
     else {
