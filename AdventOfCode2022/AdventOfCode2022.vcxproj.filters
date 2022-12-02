@@ -23,7 +23,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="2022Day1.txt">
+    <Text Include="input.txt">
       <Filter>Inputs</Filter>
     </Text>
   </ItemGroup>

@@ -130,7 +130,7 @@
     <ClCompile Include="AdventOfCode2022.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="2022Day1.txt" />
+    <Text Include="input.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
