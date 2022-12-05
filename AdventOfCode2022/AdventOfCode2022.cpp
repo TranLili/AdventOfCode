@@ -13,50 +13,32 @@ int main()
 
 	if (file.is_open()) {
 		string line;
-		vector<string> shapes;
-		int totalScore = 0;
+		vector<string> rucksack;
+		vector<int> priority;
 
 		while (file) {
 
 			// läser EN rad i file och sparar i string line
 			getline(file, line);
-			shapes.push_back(line);
-
-			// A: Rock, 1p
-			// B: Paper, 2p
-			// C: Scissors, 3p
-
-			// X: lose, 0p
-			// Y: draw, 3p
-			// Z: win, 6p
+			rucksack.push_back(line);
 			
-		}
-		for (int i = 0; i < shapes.size() - 1; i++) {
-			char c = shapes[i][2];
-			switch (c)
-			{
-			case 'X':
-				//lose
-				break;
 
-			case 'Y':
-				//draw
-				break;
+			// character på index [j] i rucksack rad [i] översättas till ett nummer
+			for (int i = 0; i < rucksack.size() - 1; i + 3) {
 
-			case 'Z':
-				//win
-				break;
+				// om den gemensamma bokstaven har hittats bryts loopen och går vidare till nästa rad
+				bool answerFound = false;
+
+				// loopen går lika långt som raden på index [i] är stort.
+				for (int j = 0; j < rucksack[i].size(); j++) {
+
+				}
 			}
-
-			if (shapes[i][0] == shapes[i][2])
-				totalScore += 3;
-
-			if ((shapes[i][0] == 'A' && shapes[i][2] == 'B') || (shapes[i][0] == 'B' && shapes[i][2] == 'C') || (shapes[i][0] == 'C' && shapes[i][2] == 'A'))
-				totalScore += 6;
 		}
-
-		cout << totalScore;
+		int sum = accumulate(priority.begin(), priority.end(), 0);
+		cout << sum;
 	}
+
 	else {
 		cout << "Could not open file." << endl;
 	}
@@ -216,4 +198,157 @@ int main()
 //	else {
 //		cout << "Could not open file." << endl;
 //	}
+//}
+
+//int SolutionD2P2()
+//{
+//	ifstream file("input.txt");
+//
+//	if (file.is_open()) {
+//		string line;
+//		vector<string> shapes;
+//		int totalScore = 0;
+//
+//		while (file) {
+//
+//			// läser EN rad i file och sparar i string line
+//			getline(file, line);
+//
+//			// line sparas längst bak i en string vector kallad shapes
+//			shapes.push_back(line);
+//
+//			// A: Rock, 1p
+//			// B: Paper, 2p
+//			// C: Scissors, 3p
+//
+//			// X: lose, 0p
+//			// Y: draw, 3p
+//			// Z: win, 6p
+//
+//		}
+//		// för varje iteration, kolla på värdet på position 3 på index i.
+//		for (int i = 0; i < shapes.size() - 1; i++) {
+//			char c = shapes[i][2];
+//			switch (c)
+//			{
+//			case 'X':
+//				// då position 2 innehåller ett X: lose
+//				cout << "lose: ";
+//				if (shapes[i][0] == 'A') {
+//					shapes[i][2] = 'C';
+//					cout << "shape 2 is C" << endl;
+//				}
+//
+//				if (shapes[i][0] == 'B') {
+//					shapes[i][2] = 'A';
+//					cout << "shape 2 is A" << endl;
+//				}
+//
+//
+//				if (shapes[i][0] == 'C') {
+//					shapes[i][2] = 'B';
+//					cout << "shape 2 is B" << endl;
+//				}
+//				break;
+//
+//			case 'Y':
+//				//då position 2 innehåller ett Y: draw
+//				cout << "draw: ";
+//				shapes[i][2] = shapes[i][0];
+//				cout << shapes[i][0] << endl;
+//				totalScore += 3;
+//				break;
+//
+//			case 'Z':
+//				// då position 2 innehåller ett Z: win
+//				cout << "win: ";
+//				if (shapes[i][0] == 'A') {
+//					shapes[i][2] = 'B';
+//					cout << "shape 2 is B" << endl;
+//				}
+//
+//				if (shapes[i][0] == 'B') {
+//					shapes[i][2] = 'C';
+//					cout << "shape 2 is C" << endl;
+//				}
+//
+//				if (shapes[i][0] == 'C') {
+//					shapes[i][2] = 'A';
+//					cout << "shape 2 is A" << endl;
+//				}
+//
+//				totalScore += 6;
+//				break;
+//			}
+//			if (shapes[i][2] == 'A')
+//				totalScore += 1;
+//			if (shapes[i][2] == 'B')
+//				totalScore += 2;
+//			if (shapes[i][2] == 'C')
+//				totalScore += 3;
+//		}
+//
+//		cout << totalScore;
+//	}
+//	else {
+//		cout << "Could not open file." << endl;
+//	}
+//	return 0;
+//}
+
+//int SolutionD3P1()
+//{
+//	ifstream file("input.txt");
+//
+//	if (file.is_open()) {
+//		string line;
+//		vector<string> rucksack;
+//		vector<int> priority;
+//
+//		while (file) {
+//
+//			// läser EN rad i file och sparar i string line
+//			getline(file, line);
+//
+//			// line sparas längst bak i en string vector kallad shapes
+//			rucksack.push_back(line);
+//		}
+//		for (int i = 0; i < rucksack.size() - 1; i++) {
+//			//hitta storleken på varje line och delar på hälften
+//			int compartment = rucksack[i].size() / 2;
+//
+//			// dela upp line i 2 lika stora substrings, kallade sub1 och sub2 med storleken av en compartment (halva storleken på line)
+//			string sub1 = rucksack[i].substr(0, compartment);
+//			string sub2 = rucksack[i].substr(compartment, compartment);
+//
+//			// character på index [j] i sub1 översättas till ett nummer, det jämförs med karaktärerna i sub2.
+//			for (int j = 0; j < sub1.size(); j++) {
+//				int c1 = sub1[j];
+//
+//				// om den gemensamma bokstaven har hittats bryts loopen och går vidare till nästa rad
+//				bool answerFound = false;
+//				for (int k = 0; k < sub2.size(); k++) {
+//					int c2 = sub2[k];
+//					if (c2 == c1) {
+//						// om det är a-z (lowercase a = 97 -> c2 blir större än 96), värdet subtraheras med 96 så det blir 1 enl. uppgiften.
+//						// om det är A-Z (uppercase A = 65 -> c2 är INTE större än 96), värdet subtraheras med 37 så att det blir 27 enl. uppgiften.
+//						int cvalue = (c2 > 96) ? c2 -= 96 : c2 -= 38;
+//						priority.push_back(cvalue);
+//						answerFound = true;
+//						break;
+//					}
+//				}
+//				if (answerFound)
+//					break;
+//			}
+//
+//		}
+//		int sum = accumulate(priority.begin(), priority.end(), 0);
+//		cout << sum;
+//	}
+//
+//	else {
+//		cout << "Could not open file." << endl;
+//	}
+//	return 0;
 //}
