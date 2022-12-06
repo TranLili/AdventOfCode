@@ -13,30 +13,17 @@ int main()
 
 	if (file.is_open()) {
 		string line;
-		vector<string> rucksack;
+		vector<string> sections;
 		vector<int> priority;
 
+		// loop för att läsa hela filen
 		while (file) {
-
 			// läser EN rad i file och sparar i string line
 			getline(file, line);
-			rucksack.push_back(line);
-			
-
-			// character på index [j] i rucksack rad [i] översättas till ett nummer
-			for (int i = 0; i < rucksack.size() - 1; i + 3) {
-
-				// om den gemensamma bokstaven har hittats bryts loopen och går vidare till nästa rad
-				bool answerFound = false;
-
-				// loopen går lika långt som raden på index [i] är stort.
-				for (int j = 0; j < rucksack[i].size(); j++) {
-
-				}
-			}
+			sections.push_back(line);
 		}
-		int sum = accumulate(priority.begin(), priority.end(), 0);
-		cout << sum;
+
+		
 	}
 
 	else {
@@ -351,4 +338,58 @@ int main()
 //		cout << "Could not open file." << endl;
 //	}
 //	return 0;
+//}
+
+//int SolutionD3P2()
+//{
+//	ifstream file("input.txt");
+//
+//	if (file.is_open()) {
+//		string line;
+//		vector<string> rucksack;
+//		vector<int> priority;
+//
+//		// loop för att läsa hela filen
+//		while (file) {
+//			// läser EN rad i file och sparar i string line
+//			getline(file, line);
+//			rucksack.push_back(line);
+//		}
+//
+//		// loopen hoppar 3 steg varje gång
+//		for (int i = 0; i < rucksack.size() - 1; i += 3) {
+//
+//
+//			// loopen går lika långt som raden på index [i] är stort.
+//			for (int j = 0; j < rucksack[i].size(); j++) {
+//				bool answerFound = false;
+//				int c1 = rucksack[i][j];
+//
+//				for (int k = 0; k < rucksack[i + 1].size(); k++) {
+//					int c2 = rucksack[i + 1][k];
+//					if (c1 == c2) {
+//						for (int l = 0; l < rucksack[i + 2].size(); l++) {
+//							int c3 = rucksack[i + 2][l];
+//							if (c2 == c3) {
+//								int cvalue = (c1 > 96) ? c1 -= 96 : c1 -= 38;
+//								priority.push_back(cvalue);
+//								answerFound = true;
+//								break;
+//							}
+//						}
+//						if (answerFound)
+//							break;
+//					}
+//				}
+//				if (answerFound)
+//					break;
+//			}
+//		}
+//		int sum = accumulate(priority.begin(), priority.end(), 0);
+//		cout << sum;
+//	}
+//
+//	else {
+//		cout << "Could not open file." << endl;
+//	}
 //}
