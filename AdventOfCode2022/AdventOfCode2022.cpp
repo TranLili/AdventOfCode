@@ -13,17 +13,49 @@ int main()
 
 	if (file.is_open()) {
 		string line;
-		vector<string> sections;
-		vector<int> priority;
+		vector<string> input;
+		vector<string> pairs;
+		vector<int> sections;
+		int count = 0;
 
 		// loop för att läsa hela filen
 		while (file) {
 			// läser EN rad i file och sparar i string line
+			// line pushas till slutet av vector sections
 			getline(file, line);
-			sections.push_back(line);
+			input.push_back(line);
 		}
+		for (int i = 0; i < input.size(); i++)
+		{
+			string delimiter = ",";
+			string pair1 = input[i].substr(0, input[i].find(delimiter));
+			string pair2 = input[i].substr(input[i].find(delimiter) + delimiter.length());
+			pairs.push_back(pair1);
+			pairs.push_back(pair2);
 
-		
+			for (int j = 0; j < pairs.size(); j++)
+			{
+				string delimiter = "-";
+				string numA = pairs[j].substr(0, pairs[j].find(delimiter));
+				string numB = pairs[j].substr(pairs[j].find(delimiter) + delimiter.length());
+				int num1 = stoi(numA);
+				int num2 = stoi(numB);
+				sections.push_back(num1);
+				sections.push_back(num2);
+			}
+			pairs.clear();
+		}
+		for (int i = 0; i < sections.size() - 4; i += 4)
+		{
+			int a = sections[i];
+			int b = sections[i + 1];
+			int c = sections[i + 2];
+			int d = sections[i + 3];
+
+			if ((a <= c && b >= d) || (c <= a && d >= b))
+				count++;
+		}
+		cout << count;
 	}
 
 	else {
@@ -387,6 +419,62 @@ int main()
 //		}
 //		int sum = accumulate(priority.begin(), priority.end(), 0);
 //		cout << sum;
+//	}
+//
+//	else {
+//		cout << "Could not open file." << endl;
+//	}
+//}
+
+//int SolutionD4P1()
+//{
+//	ifstream file("input.txt");
+//
+//	if (file.is_open()) {
+//		string line;
+//		vector<string> input;
+//		vector<string> pairs;
+//		vector<int> sections;
+//		int count = 0;
+//
+//		// loop för att läsa hela filen
+//		while (file) {
+//			// läser EN rad i file och sparar i string line
+//			// line pushas till slutet av vector sections
+//			getline(file, line);
+//			input.push_back(line);
+//		}
+//		for (int i = 0; i < input.size(); i++)
+//		{
+//			string delimiter = ",";
+//			string pair1 = input[i].substr(0, input[i].find(delimiter));
+//			string pair2 = input[i].substr(input[i].find(delimiter) + delimiter.length());
+//			pairs.push_back(pair1);
+//			pairs.push_back(pair2);
+//
+//			for (int j = 0; j < pairs.size(); j++)
+//			{
+//				string delimiter = "-";
+//				string numA = pairs[j].substr(0, pairs[j].find(delimiter));
+//				string numB = pairs[j].substr(pairs[j].find(delimiter) + delimiter.length());
+//				int num1 = stoi(numA);
+//				int num2 = stoi(numB);
+//				sections.push_back(num1);
+//				sections.push_back(num2);
+//			}
+//			pairs.clear();
+//		}
+//		for (int i = 0; i < sections.size() - 4; i += 4)
+//		{
+//			int a = sections[i];
+//			int b = sections[i + 1];
+//			int c = sections[i + 2];
+//			int d = sections[i + 3];
+//
+//			if ((a <= c && b >= d) || (c <= a && d >= b))
+//				count++;
+//		}
+//		cout << count;
 //	}
 //
 //	else {
