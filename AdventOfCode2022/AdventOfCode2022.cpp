@@ -45,17 +45,20 @@ int main()
 			}
 			pairs.clear();
 		}
+
+		// sections är en lista med alla pairs a-b,c-d
 		for (int i = 0; i < sections.size() - 4; i += 4)
 		{
+			//pair a-b
 			int a = sections[i];
 			int b = sections[i + 1];
+
+			//pair c-d
 			int c = sections[i + 2];
 			int d = sections[i + 3];
 
-			if ((a <= c && b >= d) || (c <= a && d >= b))
-				count++;
+			
 		}
-		cout << count;
 	}
 
 	else {
