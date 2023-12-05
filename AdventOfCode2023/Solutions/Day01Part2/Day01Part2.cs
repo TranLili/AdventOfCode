@@ -15,80 +15,112 @@ namespace AdventOfCode2023.Solutions.Day01Part2
         public Day01Part2(string filepath)
         {
             this.filePath = filepath;
-            this.numbers = new List<string>();
-            numbers.Add("zero");
-            numbers.Add("one");
-            numbers.Add("two");
-            numbers.Add("three");
-            numbers.Add("four");
-            numbers.Add("five");
-            numbers.Add("six");
-            numbers.Add("seven");
-            numbers.Add("eight");
-            numbers.Add("nine");
         }
 
-        public int Solution(List<string> lines)
+        public int Solution()
         {
             StreamReader reader = new StreamReader(filePath);
             string line = reader.ReadLine();
-
+            int result = 0;
             while (line != null)
             {
-                lines.Add(line);
+                string first = GetFirst(line).ToString();
+                string last = GetLast(line).ToString();
+                Console.WriteLine("first is: " + first);
+                Console.WriteLine("last is: " + last);
+                string temp = "";
+                temp += first;
+                temp += last;
+                result += int.Parse(temp);
+                Console.WriteLine("My temp: " + temp);
                 line = reader.ReadLine();
             }
-
-            Dictionary<string, int> dictionary = new Dictionary<string, int>();
-            dictionary.Add("one", 1);
-            dictionary.Add("two", 2);
-            dictionary.Add("three", 3);
-            dictionary.Add("four", 4);
-            dictionary.Add("five", 5);
-            dictionary.Add("six", 6);
-            dictionary.Add("seven", 7);
-            dictionary.Add("eight", 8);
-            dictionary.Add("nine", 9);
-
-
-            foreach(string text in lines)
-            {
-
-            }
-
-
-            foreach (string text in lines)
-            {
-                string digits = "";
-                for (int i = 0; i < text.Length; i++)
-                {
-                    if (char.IsNumber(text[i]))
-                    {
-                        digits += text[i];
-                        break;
-                    }
-                }
-
-                for (int i = text.Length - 1; i >= 0; i--)
-                {
-                    if (char.IsNumber(text[i]))
-                    {
-                        digits += text[i];
-                        Console.WriteLine("The number is: " + digits);
-                        value += int.Parse(digits);
-                        break;
-                    }
-                }
-            }
-            Console.WriteLine("My output: " + value);
-            this.value = value;
-            return value;
+            Console.WriteLine("My output: " + result);
+            this.value = result;
+            return this.value;
         }
 
-        string GetFirst(string text)
+        public int Convert(string number)
         {
-            Match match = Regex.Matches()
+            if (int.TryParse(number, out int value))
+                return value;
+            else
+            {
+                switch (number.ToLower())
+                {
+                    case "zero":
+                        return 0;
+                    case "orez":
+                        return 0;
+                    case "one":
+                        return 1;
+                    case "eno":
+                        return 1;
+                    case "two":
+                        return 2;
+                    case "owt":
+                        return 2;
+                    case "three":
+                        return 3;
+                    case "eerht":
+                        return 3;
+                    case "four":
+                        return 4;
+                    case "ruof":
+                        return 4;
+                    case "five":
+                        return 5;
+                    case "evif":
+                        return 5;
+                    case "six":
+                        return 6;
+                    case "xis":
+                        return 6;
+                    case "seven":
+                        return 7;
+                    case "neves":
+                        return 7;
+                    case "eight":
+                        return 8;
+                    case "thgie":
+                        return 8;
+                    case "nine":
+                        return 9;
+                    case "enin":
+                        return 9;
+                    default:
+                        return -1;
+                }
+            }
         }
 
+        string Reverse(string str)
+        {
+            char[] charArray = str.ToCharArray();
+            Array.Reverse(charArray);
+            return new string(charArray);
+        }
+
+        int GetFirst(string text)
+        {
+            Match match = Regex.Match(text, @"(?:zero|one|two|three|four|five|six|seven|eight|nine|\d+)");
+            int number = match.Success ? Convert(match.Value) : -1;
+            string d = number.ToString();
+            char f = d[0];
+            int result = (int)Char.GetNumericValue(f);
+            return result;
+        }
+
+        int GetLast(string text)
+        {
+            string reverse = Reverse(text);
+            Match match = Regex.Match(reverse, @"(?:orez|eno|owt|eerht|ruof|evif|xis|neves|thgie|enin|\d+)");
+            int number = match.Success ? Convert(match.Value) : -1;
+            string d = number.ToString();
+            char f = d[0];
+            int result = (int)Char.GetNumericValue(f);
+            return result;
+            return -1;
+        }
     }
 }
