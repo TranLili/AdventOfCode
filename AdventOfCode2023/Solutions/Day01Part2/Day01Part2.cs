@@ -120,7 +120,6 @@ namespace AdventOfCode2023.Solutions.Day01Part2
             char f = d[0];
             int result = (int)Char.GetNumericValue(f);
             return result;
-            return -1;
         }
     }
 }
