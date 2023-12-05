@@ -2,7 +2,7 @@
 using System.IO;
 using System.Reflection.PortableExecutable;
 
-namespace AdventOfCode2023.Solutions.Day01Part1
+namespace AdventOfCode2023.Solutions
 {
     class Day01Part1
     {

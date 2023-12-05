@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace AdventOfCode2023.Solutions.Day01Part2
+namespace AdventOfCode2023.Solutions
 {
     class Day01Part2
     {

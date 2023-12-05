@@ -4,8 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AdventOfCode2023.Solutions;
-using AdventOfCode2023.Solutions.Day01Part1;
-using AdventOfCode2023.Solutions.Day01Part2;
 
 namespace AdventOfCode2023
 {
