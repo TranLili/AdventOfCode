@@ -7,12 +7,12 @@ using AdventOfCode2023.Solutions;
 
 namespace AdventOfCode2023
 {
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
         {
             string directory = @"C:\Users\tranl\_programming\AdventOfCode\AdventOfCode2023\Inputs\";
-            string fileName = "Day01Part2.txt";
+            string fileName = "Day02Part1.txt";
             string path = Path.Combine(directory, fileName);
             Day01Part2 sol = new(path);
             int result = sol.Solution();
